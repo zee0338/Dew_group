@@ -1,0 +1,557 @@
+/* Slider */
+.slick-slider
+{
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+    /*max-width: none;*/
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+/* Slick Theme Color */
+
+/* Arrows */
+.slick-prev,
+.slick-next
+{
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+
+    cursor: pointer;
+
+    color: transparent;
+    border: none;
+    outline: none;
+    background: #000;
+}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus
+{
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before
+{
+    opacity: 1;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before
+{
+    opacity: .25;
+}
+
+.slick-prev:before,
+.slick-next:before
+{
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 25px;
+    line-height: 1;
+    color: white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev{
+    left: 40px;
+    background: #000;
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+}
+[dir='rtl'] .slick-prev
+{
+    right: 40px;
+    left: auto;
+}
+.slick-prev:before
+{
+    content: '\f053';
+}
+[dir='rtl'] .slick-prev:before
+{
+    content: '\f054';
+}
+
+.slick-next{
+    right: 40px;
+    background: #000;
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus{
+	background-color: #000;
+	color: #fff;
+}
+
+[dir='rtl'] .slick-next
+{
+    right: auto;
+    left: -25px;
+}
+.slick-next:before
+{
+    content: '\f054';
+}
+[dir='rtl'] .slick-next:before
+{
+    content: '←';
+}
+
+/* Dots */
+.slick-dotted.slick-slider
+{
+    margin-bottom: 30px;
+}
+
+.slick-dots
+{
+    position: absolute;
+    bottom: -25px;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.slick-dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.slick-dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus
+{
+    outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+{
+    opacity: 1;
+}
+.slick-dots li button:before
+{
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: .25;
+    color: black;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before
+{
+    opacity: .75;
+    color: black;
+}
+
+#mapid{
+    text-align: center;
+    width: 100%;
+    height: 400px;
+    z-index: 1;
+}
+
+/* Here's where our carousel begins, with the main wrapper being
+relatively positioned, so that our absolutely positioned items are
+in the right place. */
+.carousel-wrapper {
+    position: relative;
+    /* Our absolutely positioned carousel items span the width and
+    height of its parent. We're making them transparent by default so
+    that they fade in when we cycle through them using the arrow links. */
+    /* Let's set our jump link targets display: none; so that we're not
+    making the browser jump to the top of the carousel whenever a user
+    clicks on one of our arrow links. This attribute selector will target
+    any element whose id starts with 'target-item'. */
+    /* So, up above we made all our carousel items transparent, which means
+    that on page-load, we'd have a big empty box where our carousel should be.
+    Let's set our first item's opacity to 1 so that it displays instead. Also,
+    we're setting its z-index to 2, so that it's positioned on top of the
+    other carousel items. */
+    /* But we don't want the first item to ALAWYS be opacity: 1; otherwise
+    it would peek through when cycling between items two and above. */
+    /* ...but if #target-item-1 is targeted, well we do want the first item
+    to show up, so we're selecting it with the ~ sibling selector and
+    setting its opacity to 1 again :-) */
+    /* If any other target-item-# is targeted, let's select it using the sibling
+    selector, make it fade in, and place it on top of the pile using z-index: 3.
+    Here's where you'd add more target items if your carousel has more than three
+    items. It might be worth adding like 10 items right off the bat. */
+  }
+  .carousel-wrapper .carousel-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px 50px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    border: 1px solid #aaa;
+    /* Did you notice the 50px left, right padding up above? It's so
+    we can position our arrow links! Each one will be 50px wide. Also,
+    I'm using empty links with a background image so that the links
+    look like arrows. Make sure you swap out that URL with an actual
+    URL so that your arrow links aren't just transparent rectangles. */
+    /* I really like how these carousel items look on a dark image
+    background, so if a .carousel-item div has the class 'light',
+    we'll make its text color white, and use a white arrow instad of
+    a dark gray one. Again, make sure this arrow image exists somewhere */
+    /* Let's use using some media queries to resize the arrows
+    on smaller devices.*/
+  }
+  .carousel-wrapper .carousel-item .arrow {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 50px;
+    height: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background: url("http://haloxp.com/codepen/carousel-arrow-dark.png") 50% 50%/20px no-repeat;
+    /* Let's put our arrow to go back on the left. */
+    /* And our arrow to go forward on the right. Since I'm using
+    the same arrow image for both my arrows, I'm rotating this one by
+    180 degrees so that it points in the right direction */
+  }
+  .carousel-wrapper .carousel-item .arrow.arrow-prev {
+    left: 0;
+  }
+  .carousel-wrapper .carousel-item .arrow.arrow-next {
+    right: 0;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .carousel-wrapper .carousel-item.light {
+    color: white;
+  }
+  .carousel-wrapper .carousel-item.light .arrow {
+    background: url("http://haloxp.com/codepen/carousel-arrow-light.png") 50% 50%/20px no-repeat;
+  }
+  @media (max-width: 480px) {
+    .carousel-wrapper .carousel-item .arrow, .carousel-wrapper .carousel-item.light .arrow {
+      background-size: 10px;
+      background-position: 10px 50%;
+    }
+  }
+  .carousel-wrapper [id^="target-item"] {
+    display: none;
+  }
+  .carousel-wrapper .item-1 {
+    z-index: 2;
+    opacity: 1;
+  }
+  .carousel-wrapper *:target ~ .item-1 {
+    opacity: 0;
+  }
+  .carousel-wrapper #target-item-1:target ~ .item-1 {
+    opacity: 1;
+  }
+  .carousel-wrapper #target-item-2:target ~ .item-2, .carousel-wrapper #target-item-3:target ~ .item-3 {
+    z-index: 3;
+    opacity: 1;
+  }
+
+  /* logo carousel */
+
+  .slick-slide {
+    margin: 0px 20px;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-slider
+{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+h5 {
+    display: inline-block;
+    padding: 10px;
+    background: #B9121B;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .p {
+    text-align: center;
+    padding-top: 40px;
+    font-size: 13px;
+  }
